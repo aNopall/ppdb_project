@@ -1,0 +1,166 @@
+<title>Alur Pendaftaran - Portal PPDB </title>
+{% include 'partials/_head.twig' %}
+<body>
+
+  {% setcontent alurs = 'alurs' earliest limit 5 %}
+  {% setcontent footer = 'footer' %}
+
+  <header>
+      {{ menu('main', template='partials/_menu.twig') }}
+      {# {% include 'partials/_menu.twig' %} #}
+  </header>
+
+  <!-- Back to top button -->
+  <div class="back-to-top"></div>
+
+  <main style="margin-top: 100px;">
+  <div class="link-ppdb">  
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-9 col-lg-9 py-6 wow fadeInLeft">
+            <div class="d-flex flex-row">
+              <div class="img-fluid mr-3">
+                <img src="{{ asset('img/icon_pattern.svg') }}" alt="">
+              </div>
+              <div>
+                <h2 class="title-section">Alur PPDB</h2>
+                <div class="divider"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+        <div class="row justify-content-center">
+        {% for alur in alurs %}
+          <div class="col-lg-3 px-2 mb-2 wow fadeInLeft">
+              <div class="card" width="15rem" style="height:500px; box-shadow: 0 8px 24px 0 rgb(65 50 75 / 10%); border-radius:15px">
+                <img src="{{alur.image}}"  width="200px" height="200px" class="card-img-top" style="padding: 20px 20px 20px 20px; object-fit: cover;" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size:20px;">{{alur.title}}</h5>
+                  <p class="card-text" style="font-size:13px; text-align:justify">{{alur.desc[:287]}}...</p>
+                  {% if alur.link is not empty %}
+                  <div class="footer text-center" style="width:225px; position:absolute; top: 450px;">
+                    <a href="{{alur.link}}" class="btn btn-primary rounded-pill" style="font-size:14px">{{alur.label_link}}</a>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  
+    {# <div class="page-section">
+      <div class="container">
+        <div class="text-center wow fadeInUp">
+          <h2 class="title-section">Jalur <span class="marked">Pendaftaran</span> PPDB Online Kota Bogor</h2>
+          <div class="divider mx-auto"></div>
+        </div>
+  
+        <div class="row mt-5">
+          <div class="col-lg-3 py-3 wow fadeInUp">
+            <h5>Jadwal PPDB SD Tahap I</h5>
+            <p>Jadwal PPDB SD untuk pengguna jalur afirmasi, jalur perpindahan orang tua, dan jalur istimewa tenaga medis & paramedis covid-19</p>
+          </div>
+          <div class="col-lg-3 py-3 text-center wow fadeInUp">
+            <img src="{{ asset('img/pendaftaran.png') }}" width="150px" height="150px" style="margin-bottom: 10px;">
+            <h5>Pendaftaran</h5>
+            <p>9 Juni 2022 <span>s.d.</span> 10 Juni 2022 </p>
+          </div>
+          <div class="col-lg-3 py-3 text-center wow fadeInUp">
+            <img src="{{ asset('img/pengumuman.png') }}" width="150px" height="150px" style="margin-bottom: 10px;">
+            <h5>Pengumuman</h5>
+            <p>9 Juni 2022 <span>s.d.</span> 10 Juni 2022 </p>
+          </div>
+        </div>
+      </div> <!-- .container -->
+    </div> <!-- .page-section -->
+  
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-3 py-3">
+          <h3>Digi<span class="text-primary">Gram.</span></h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+
+          <p><a href="#" >digigram@mail.com</a></p>
+          <p><a href="#">+00 1122 3344 5566</a></p>
+        </div>
+        <div class="col-lg-3 py-3">
+          <h5>Quick Links</h5>
+          <ul class="footer-menu">
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 py-3">
+          <h5>About Us</h5>
+          <ul class="footer-menu">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Our Teams</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">News & Press</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 py-3">
+          <h5>Subscribe</h5>
+          <form action="#">
+            <input type="text" class="form-control" placeholder="Enter your mail..">
+          </form>
+
+          <div class="sosmed-button mt-4">
+            <a href="#"><span class="mai-logo-facebook-f"></span></a>
+            <a href="#"><span class="mai-logo-twitter"></span></a>
+            <a href="#"><span class="mai-logo-google"></span></a>
+            <a href="#"><span class="mai-logo-linkedin"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 py-2">
+          <p id="copyright">&copy; 2020 <a href="https://macodeid.com/">MACode ID</a>. All rights reserved</p>
+        </div>
+        <div class="col-sm-6 py-2 text-right">
+          <div class="d-inline-block px-3">
+            <a href="#">Privacy</a>
+          </div>
+          <div class="d-inline-block px-3">
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .container -->
+  </footer> <!-- .page-footer --> #}
+
+  <footer>
+      {# {{ menu('main', template='partials/_footer.twig') }} #}
+      {% include 'partials/_footer.twig' with { content: footer, contenttype: 'footer' } %}
+  </footer>
+
+{# 
+  <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+
+  <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+
+  <script src="{{ asset('vendor/wow/wow.min.js') }}"></script>
+
+  <script src="{{ asset('vendor/owl-carousel/js/owl.carousel.min.js') }}"></script>
+
+  <script src="{{ asset('vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+
+  <script src="{{ asset('vendor/animateNumber/jquery.animateNumber.min.js') }}"></script>
+
+  <script src="{{ asset('js/google-maps.js') }}"></script>
+
+  <script src="{{ asset('js/theme.js') }}"></script> #}
+
+</body>
+</html>

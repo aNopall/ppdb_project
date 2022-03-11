@@ -1,0 +1,15 @@
+<div class="manfaat mx-3">
+    {% for manfaat in manfaat %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img class="w-100 mb-5" src="{{manfaat.foto}}" alt="">
+                </div>
+                <div class="col-md-7 mt-md-3">
+                    <h2 class="title">{{manfaat.title}}</h2>
+                    <p class="sub-title">{{manfaat.desc}}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

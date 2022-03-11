@@ -1,0 +1,15 @@
+<div class="deskripsi mx-3">
+    {% for deskripsi in deskripsi %}
+        <div class="container">
+            <div class="row">
+                <div class="col order-md-1">
+                    <img class="w-100 mb-5" src="{{deskripsi.foto}}" alt="">
+                </div>
+                <div class="col-md-7 mt-md-3">
+                    <h2 class="title">{{deskripsi.title}}</h2>
+                    <p class="sub-title">{{deskripsi.desc}}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

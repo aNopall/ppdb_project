@@ -1,0 +1,53 @@
+{# <div class="link-ppdb">  
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-9 col-lg-9 py-6 wow fadeInLeft">
+            <div class="d-flex flex-row">
+              <div class="img-fluid mr-3">
+                <img src="{{ asset('img/icon_pattern.svg') }}" alt="">
+              </div>
+              <div>
+                <h2 class="title-section">Link PPDB</h2>
+                <div class="divider"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+        <div class="row justify-content-end">
+        {% for linkppdb in linkppdbs %}
+          <div class="col-lg-3 px-2 mb-2 wow fadeInLeft">
+              <div class="card" width="15rem" style="height:500px; box-shadow: 0 8px 24px 0 rgb(65 50 75 / 10%); border-radius:15px">
+                <img src="{{linkppdb.image}}" width="200px" height="200px" class="card-img-top" style="padding: 20px 20px 20px 20px; object-fit: cover;" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{linkppdb.title}}</h5>
+                  <p class="card-text" style="font-size:13px; text-align:justify">{{linkppdb.desc[:287]}}...</p>
+                  <div class="footer text-center" style="width:225px; position:absolute; top: 450px;">
+                    <a href="{{linkppdb.link}}" class="btn btn-primary rounded-pill" style="font-size:14px">{{linkppdb.label_link}}</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div> #}
+<div class="link-app mx-3 my-5">
+            <div class="container">
+                <h2 class="title-link">LINK PPDB</h2>
+                <div class="row">
+                  {% for linkppdb in linkppdbs %}
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="{{linkppdb.image}}" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">{{linkppdb.title_card}}</h5>
+                                <p class="card-text">{{linkppdb.desc_card}}</p>
+                                <a href="{{linkppdb.link}}" class="btn-card align-self-start" style="margin-top: auto;">{{linkppdb.label_link}}</a>
+                            </div>
+                        </div>
+                    </div>
+                  {% endfor %}
+                </div>
+            </div>
+</div>
